@@ -44,6 +44,7 @@ function isPositive( number ) {
   } 
     return false;
 }
+
 // Call the function to test each outcome (true & false) 
 // Write a separate console.log statement for each outcome
 console.log( 'isPositive - should say true', isPositive(3) );
@@ -123,9 +124,68 @@ console.log('sumAll of [21, 32, 45] should be 98:', sumAll(test3));
 // 10. Function to return a new array of all positive (greater than zero)
 //     numbers contained in an input array. If there are no positive numbers
 //     return an empty array. Note: The input array should not change.
+function filterPostive(array) {
+  let positiveArray = [];
+  for (k in array) {
+    if (array[k] > 0) {
+    positiveArray.push(array[k]);  
+    }
+  }
+  return positiveArray;
+  }
 
-
+  //test filterPositive
+  let test4 = [1, 2, 3, 4, 5];
+  console.log('Array should contain [1, 2, 3, 4, 5]:', filterPostive(test4));
+  test4 = [-1, -3, -5, -7]
+  console.log('Array should be empty [] :', filterPostive(test4));
 
 // 11. Pick a problem from Edabit(https://edabit.com/) or 
 //     CodeWars(https://www.codewars.com/). Then describe it 
 //     here in a comment, write the function, and test it!
+
+//Which Generation Are You?
+//Create a function that takes a number x and a character y ("m" for male, 
+//"f" for female), and returns the name of an ancestor (m/f) or descendant (m/f).
+//If the number is negative, return the related ancestor.
+//If positive, return the related descendant.
+//You are generation 0. In the case of 0 (male or female), return "me!".
+function whichGenRYou(x, y) {
+  if (x === 0) {
+    return 'me!';
+  } else if (x === 1 && y === 'm') {
+    return 'son';
+  } else if (x === 1 && y === 'f') {
+    return 'daughter';
+  } else if (x === 2 && y === 'm') {
+    return 'grandson';
+  } else if (x === 2 && y === 'f') {
+    return 'granddaughter';
+  } else if ( x === 3 && y === 'f') {
+    return 'great granddaughter';
+  } else if (x === 3 && y === 'm') {
+    return 'great granddaughter';
+  } else if (x === -1 && y == 'm') {
+    return 'grandfather';
+  } else if (x=== -1 && y === 'f') {
+    return 'grandmother';
+  } else if (x === -2 && y === 'f') {
+    return 'great grandmother';
+  } else if (x === -2 && y === 'm') {
+    return 'great grandfather';
+  } else if (x === -3 && y === 'm') {
+    return 'great great grandfather';
+  } else if (x === -3 && y === 'f') {
+    return 'great great grandmother';
+  } else if (x < 0) {
+    return 'ancestor';
+  } else {
+    return 'descendent';
+  } //longest if else statement I've ever written
+}
+
+//test whichGenRYou
+console.log(`My ${whichGenRYou(-1, 'f')} is one generation above ${whichGenRYou(0, 'f')}`);
+console.log(`My ${whichGenRYou(-7, 'f')} is many generations above ${whichGenRYou(0, 'f')}`);
+console.log(`As far as I'm aware, I have no ${whichGenRYou(10, 'm')}`);
+console.log(`My ${whichGenRYou(-3, 'm')} was Amish!`);
