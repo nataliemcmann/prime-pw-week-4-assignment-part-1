@@ -74,7 +74,7 @@ console.log('getLast should be "d":', getLast(test2));
 //    DO NOT use Array.includes, Array.indexOf, or Array.find 
 function find( value, array ) {
   let found = false;  //declare return value outside of for loop
-  for (i in array) {
+  for (let i in array) {
     if (array[i] === value) {
       console.log('Found a match', array[i]);
       found = true; //reassign value inside for loop if value found
@@ -109,7 +109,7 @@ console.log( 'isFirstLetter - should say false', isFirstLetter('z', 'apple') );
 // 9. Function to return the sum of all numbers in an array
 function sumAll(array) {
   let sum = 0;
-  for (j in array) {
+  for (let j in array) {
     sum += array[j];
   }
   return sum;
@@ -126,7 +126,7 @@ console.log('sumAll of [21, 32, 45] should be 98:', sumAll(test3));
 //     return an empty array. Note: The input array should not change.
 function filterPostive(array) {
   let positiveArray = [];
-  for (k in array) {
+  for (let k in array) {
     if (array[k] > 0) {
     positiveArray.push(array[k]);  
     }
