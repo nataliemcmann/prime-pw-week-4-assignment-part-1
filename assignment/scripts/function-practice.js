@@ -15,7 +15,7 @@ console.log('Test - should say "Hello World!"', hello());
 // 2. Function to return an personalized hello, using the `name` argument.
 //    for example 'Hello, Jo!', or 'Hello, Stacy!'
 function helloName( name ) {
-  return 'Hello ' + name;
+  return 'Hello ' + name + '!';
 }
 // Remember to call the function to test
 console.log('Test-should say "Hello Jude!"', helloName('Jude'));
@@ -27,7 +27,7 @@ function addNumbers( firstNumber, secondNumber ) {
   // return firstNumber + secondNumber;
 }
 console.log('Test - add 10 and 33. Should be 43:', addNumbers(10, 33));
-
+console.log('Test - add 4 and -5. Should be -1:', addNumbers(4, -5));
 
 // 4. Function to multiply three numbers & return the result
 function multiplyThree( num0, num1, num2 ){
@@ -35,6 +35,7 @@ function multiplyThree( num0, num1, num2 ){
   return answer;
 }
 console.log('Test - multiply 7 and 1 and 19. Should be 133:', multiplyThree(7, 1, 19));
+console.log('Test - multiply 2 and 0.5 and 30. Should be 30:', multiplyThree(2, 0.5, 30));
 
 // 5. Function that will return true if a number is positive, 
 //    or greater than zero, and false otherwise
@@ -180,7 +181,7 @@ function whichGenRYou(x, y) {
   } else if (x < 0) {
     return 'ancestor';
   } else {
-    return 'descendent';
+    return 'descendant';
   } //longest if else statement I've ever written
 }
 
